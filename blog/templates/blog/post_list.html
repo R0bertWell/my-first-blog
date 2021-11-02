@@ -8,15 +8,12 @@
     <div>
         <h1><a href="/">Blog Django Girls</a></h1>
     </div>
-    <div>
-        <p>Publicado em 02/11/2021 às 00:12</p>
-        <h2><a href="">Meu Primeiro Post</a></h2>
-        <p>Sonim Sinclim Flenem</p>
-    </div>
-    <div>
-        <p>Publicado em 02/11/2021 às 00:14</p>
-        <h2><a href="">Meu Segundo Post</a></h2>
-        <p>Sonim Sinclim Flenem</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>published at: {{ post.created_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
